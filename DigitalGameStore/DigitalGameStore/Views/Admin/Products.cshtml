@@ -1,0 +1,30 @@
+﻿@using DigitalGameStore.Models
+@model IEnumerable<Product>
+    
+    <div class="btn-group">
+        <a asp-action="AddProduct" class="btn btn-primary" style="margin:5%;">Dodaj</a>
+    </div>
+    <table class="table table-stripped">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Img Url</th>
+            <th>Operations</th>
+        </tr>
+
+        @foreach (Product p in Model)
+        {
+    <tr>
+        <td>@p.ProductId</td>
+        <td>@p.ProductName</td>
+        <td>@p.ProductDescription</td>
+        <td>@p.ProductImgUrl</td>
+        <td>
+            <a asp-action="EditProduct" asp-route-id="@p.ProductId" class="btn">Edit</a>
+            <a asp-action="DetailsProduct" asp-route-id="@p.ProductId" class="btn">Details</a>
+            <a asp-action="DeleteProduct" asp-route-id="@p.ProductId" class="btn">Delete</a>
+        </td>
+    </tr>
+        }
+    </table>

@@ -1,0 +1,47 @@
+﻿@model DigitalGameStore.ViewModels.ProductViewModel
+
+<ul>
+    <li>ID:@Model.Product.ProductId</li>
+    <li>NAME:@Model.Product.ProductName</li>
+    <li>DESCRIPTION:@Model.Product.ProductDescription</li>
+    <li>CLASS:@Model.Product.ProductClassId</li>
+    <li>REVIEWS: @Model.ReviewMark</li>
+</ul>
+
+@using (Html.BeginForm("Review", "Home", new { id = Model.Product.ProductId }, FormMethod.Post))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Write a review</th>
+        </tr>
+        <tr>
+            <td>ProductId: </td>
+            <td>
+                @Html.TextBoxFor(pvm => pvm.Review.ProductId)
+            </td>
+        </tr>
+        <tr>
+            <td>Comment: </td>
+            <td>
+                @Html.TextBoxFor(pvm => pvm.Review.ReviewComment)
+            </td>
+        </tr>
+        <tr>
+            <td>Review: </td>
+            <td>
+                @Html.DropDownListFor(pvm => pvm.Review.ReviewEvaluation, new List<SelectListItem>
+                   { new SelectListItem{Text="1", Value="1"},
+                     new SelectListItem{Text="2", Value="2"},
+                     new SelectListItem { Text = "3", Value = "3"},
+                     new SelectListItem{Text="4", Value="4"},
+                     new SelectListItem{Text="5", Value="5"}},
+                     "Please select")
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+}
+

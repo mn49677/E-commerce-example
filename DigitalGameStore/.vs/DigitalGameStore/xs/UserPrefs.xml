@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{64517115-5240-4A99-9DA7-1C57B9F0C652}|Default">
+  <MonoDevelop.Ide.ItemProperties.DigitalGameStore PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DigitalGameStore" expanded="True">
+            <Node name="DigitalGameStore" expanded="True">
+              <Node name="ScaffoldingReadMe.txt" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

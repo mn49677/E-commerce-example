@@ -1,0 +1,31 @@
+﻿@model HomeViewModel
+
+<style>
+
+    .collection {
+        display: grid;
+        grid-auto-columns: max-content;
+        grid-auto-flow: dense;
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 25px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 60px auto;
+        max-width: 800px;
+    }
+</style>
+
+<div class="collection">
+    @foreach (Product p in Model.Products)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@Url.Content(p.ProductImgUrl)" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@p.ProductName</h5>
+                <p class="card-text">
+                    @{@Model.TruncDescription(100, p.ProductDescription);}
+                </p>
+                <a asp-action="DetailsProduct" asp-route-id="@p.ProductId" class="btn btn-primary">Više</a>
+            </div>
+        </div>
+    }
+</div>

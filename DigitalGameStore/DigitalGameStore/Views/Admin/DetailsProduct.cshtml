@@ -1,0 +1,43 @@
+﻿@model DigitalGameStore.ViewModels.AddProductViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Detalji</h1>
+<h3>Proizvoda</h3>
+
+<div>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductId)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Product.ProductId)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductDescription)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Product.ProductDescription)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductImgUrl)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Product.ProductImgUrl)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductClasses.Where(pc => pc.ProductClassId == model.Product.ProductClassId).FirstOrDefault().ProductClassName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.ProductClasses.Where(pc => pc.ProductClassId == model.Product.ProductClassId).FirstOrDefault().ProductClassName)
+        </dt>
+    </dl>
+</div>

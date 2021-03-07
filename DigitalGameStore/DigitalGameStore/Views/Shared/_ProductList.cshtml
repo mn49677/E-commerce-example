@@ -1,0 +1,9 @@
+﻿@model HomeViewModel
+<ul>
+    @foreach (Product p in Model.Products)
+    {
+        <li>
+            @p.ProductName
+        </li>
+    }
+</ul>

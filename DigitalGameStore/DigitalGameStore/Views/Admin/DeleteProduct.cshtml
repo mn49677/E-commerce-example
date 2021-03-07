@@ -1,0 +1,14 @@
+@model DigitalGameStore.Models.Product
+
+@{
+    ViewData["Title"] = "Brisanje proizvoda";
+}
+
+<h1>Brisanje proizvoda</h1>
+<h3>@Model.ProductName sa ID-em @Model.ProductId</h3>
+
+<form asp-action="DeleteProduct" method="post">
+    <input type="hidden" asp-for="ProductId"/>
+    <input type="submit" value="Obriši" class="btn btn-danger" />
+    <a asp-action="Products">Nazad na popis</a>
+</form>

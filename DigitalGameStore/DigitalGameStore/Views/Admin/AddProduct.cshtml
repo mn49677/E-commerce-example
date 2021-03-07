@@ -1,0 +1,57 @@
+﻿@model DigitalGameStore.ViewModels.AddProductViewModel2
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Dodaj</h1>
+<h3>Proizvod</h3>
+
+<div style="" class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" asp-action="AddProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDescription"></label>
+                <textarea asp-for="ProductDescription" class="form-control"></textarea>
+                <span asp-validation-for="ProductDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductClassId"></label>
+                <select asp-for="ProductClassId" asp-items="@(new SelectList(Model.ProductClasses,"ProductClassId","ProductClassName"))" class="form-control">
+                    <option>Please select one</option>
+                </select>
+                <span asp-validation-for="ProductClassId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPrice"></label>
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Picture"></label>
+                <div class="custom-file">
+                    <input asp-for="Picture" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Odaberi sliku</label>
+                </div>
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-success" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Products">Nazad na popis</a>
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
